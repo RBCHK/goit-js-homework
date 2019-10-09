@@ -16,7 +16,7 @@
 
 // logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
 
- 
+
 // !Решение 1
 
 // logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
@@ -40,70 +40,31 @@
 
 // Вызовы функции для проверки работоспособности твоей реализации.
 
-// console.log(
-//   calculateEngravingPrice(
-//     'Proin sociis natoque et magnis parturient montes mus',
-//     10,
-//   ),
-// ); // 80
-
-// console.log(
-//   calculateEngravingPrice(
-//     'Proin sociis natoque et magnis parturient montes mus',
-//     20,
-//   ),
-// ); // 160
-
-// console.log(calculateEngravingPrice('Donec orci lectus aliquam est', 40)); // 200
-
-// console.log(calculateEngravingPrice('Donec orci lectus aliquam est', 20)); // 100
-
-
 
 // !Решение 2
 
 // function calculateEngravingPrice(message, pricePerWord) {
 // 	const arr = message.split(' ');
-// 	console.log('arr :', arr);
+// 	// console.log('arr :', arr);
 // 	return arr.length * pricePerWord
 // }
 
-
-// console.log(
-// 	calculateEngravingPrice(
-// 	  'Proin sociis natoque et magnis parturient montes mus',
-// 	  10,
-// 	),
-//   ); //   80
-
-//   console.log(
-// 	calculateEngravingPrice(
-// 	  'Proin sociis natoque et magnis parturient montes mus',
-// 	  20,
-// 	),
-//   ); //   160
-
-//   console.log(calculateEngravingPrice('Donec orci lectus aliquam est', 40)); // 200
-
-//   console.log(calculateEngravingPrice('Donec orci lectus aliquam est', 20)); // 100
+// console.log(calculateEngravingPrice('Proin sociis natoque et magnis parturient montes mus', 10)); //   80
+// console.log(calculateEngravingPrice('Proin sociis natoque et magnis parturient montes mus', 20)); //   160
+// console.log(calculateEngravingPrice('Donec orci lectus aliquam est', 40)); // 200
+// console.log(calculateEngravingPrice('Donec orci lectus aliquam est', 20)); // 100
 
 
 //! Задание #3
 
-// Напиши фукцнию findLongestWord(string), которая принимает параметром произвольную строку(в строке будут только слова и пробелы) и возвращает самое длинное слово в этой строке.
-
-// Вызовы функции для проверки работоспособности твоей реализации.
-
-// console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // 'jumped'
-
-// console.log(findLongestWord('Google do a roll')); // 'Google'
-
-// console.log(findLongestWord('May the force be with you')); // 'force'
+// Напиши фукцнию findLongestWord(string), которая принимает параметром 
+// произвольную строку(в строке будут только слова и пробелы) и возвращает 
+// самое длинное слово в этой строке.
 
 
 //! Решение #3
 
-// const findLongestWord = function (string) {
+// function findLongestWord(string) {
 // 	const words = string.split(' ');
 // 	let maxWordsLength = '';
 
@@ -114,9 +75,97 @@
 // 	}
 // 	return maxWordsLength
 // }
+
 // console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // 'jumped'
 // console.log(findLongestWord('Google do a roll')); // 'Google'
 // console.log(findLongestWord('May the force be with you')); // 'force'
+
+
+//! Задание 4 --------------------------------------------------------
+
+// Напиши функцию formatString(string) принимающую строку в параметр string.
+
+// Если длина строки не превышает 40 символов, функция возвращает ее в исходном виде.
+// Если длина больше 40 символов, то функция обрезает строку до 40 - ка символов и 
+// добавляет в конец строки троеточие '...', после чего возвращает укороченную версию.
+// Вызовы функции для проверки работоспособности твоей реализации.
+
+//! Решение #4
+
+// console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+// // вернется оригинальная строка
+// console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+// // вернется форматированная строка
+// console.log(formatString('Curabitur ligula sapien.'));
+// // вернется оригинальная строка
+// console.log(formatString('Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.'));
+// // вернется форматированная строка
+
+// function formatString(string) {
+// 	if (string.length <= 40) {
+// 		return string;
+// 	} else {
+// 		return string.slice(0, 40) + '...' ;
+// 	}
+// }
+
+
+
+
+//! Задание 5 -----------------------------------------------------------------
+
+// Напиши функцию checkForSpam(str), принимающую 1 параметр string - строку.
+// Функция проверяет ее на содержание слов spam и sale.Если нашли зарещенное 
+// слово то функция возвращает true, если запрещенных слов нет функция 
+// возвращает false.Слова в строке могут быть в произвольном регистре.
+
+// Вызовы функции для проверки работоспособности твоей реализации.
+
+// console.log(checkForSpam('Latest technology news')); // false
+
+// console.log(checkForSpam('JavaScript weekly newsletter')); // false
+
+// console.log(checkForSpam('Get best sale offers now!')); // true
+
+// console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
+
+//! Решение #5
+
+
+
+
+
+
+
+
+
+//! Задание 6 --------------------------------------------------------------
+
+// Напиши скрипт со следующим функционалом:
+
+// 	При загрузке страницы пользователю предлагается в prompt ввести число.
+// Ввод сохраняется в переменную input и добавляется в массив чисел numbers.
+// Операция ввода числа пользователем и сохранение в массив продолжается до
+// тех пор, пока пользователь не нажмет Cancel в prompt.
+// После того как пользователь прекратил ввод нажав Cancel, если массив не
+// пустой, необходимо посчитать сумму всех элементов массива и записать ее
+// в переменную total.Используй цикл
+// for или
+// for... of .После чего в консоль
+// выведи строку 'Общая сумма чисел равна [сумма]'.
+// bell Делать проверку того, что пользователь ввел именно число, а не
+// произвольный набор символов, не обязательно.Если хочешь, в случае
+// некорректного ввода, показывай alert с текстом 'Было введено не число, 
+// попробуйте еще раз ', при этом результат prompt записывать в массив чисел 
+// не нужно, после чего снова пользователю предлагается ввести число в prompt.
+
+// let input;
+// const numbers = [];
+// let total = 0;
+
+//! Решение #6
+
+
 
 
 //! Задание 7 ------------------------------------------------------------
@@ -161,6 +210,12 @@
 // addLogin добавляет или не добавляет логин в массив. При этом для проверок условия 
 // добавления использует результаты вызовов других функций - isLoginUnique и isLoginValid.
 
+// addLogin(logins, 'Ajax'); // 'Логин успешно добавлен!'
+// addLogin(logins, 'robotGoogles'); // 'Такой логин уже используется!'
+// addLogin(logins, 'Zod'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
+// addLogin(logins, 'jqueryisextremelyfast'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
+
+
 //! Решение #7
 
 // const logins = [
@@ -180,8 +235,9 @@
 // };
 
 // const addLogin = function (allLogins, login) {
+
 // 	if (!isLoginValid(login)) {
-// 		return alert('Ошибка! Логин должен быть от 4 до 16 символов')
+// 		return alert('Ошибка! Логин должен быть от 4 до 16 символов');
 // 	}
 
 // 	if (!isLoginUnique(allLogins, login)) {
@@ -189,16 +245,7 @@
 // 	}
 
 // 	allLogins.push(login);
-// 	console.log(allLogins);
-// 	return 'Логин успешно добавлен!';
-
+// 	return alert('Логин успешно добавлен!');
 // };
 
-// addLogin(logins, prompt('Enter login'));
-
-
-// Вызовы функции для проверки
-// addLogin(logins, 'Ajax'); // 'Логин успешно добавлен!'
-// addLogin(logins, 'robotGoogles'); // 'Такой логин уже используется!'
-// addLogin(logins, 'Zod'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
-// addLogin(logins, 'jqueryisextremelyfast'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
+// addLogin(logins, prompt('Введите логин'));
