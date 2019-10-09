@@ -92,6 +92,16 @@
 
 //! Решение #4
 
+// function formatString(string) {
+
+// 	if (string.length <= 40) {
+// 		return string;
+// 	} else {
+// 		return string.slice(0, 40) + '...';
+// 	}
+
+// }
+
 // console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
 // // вернется оригинальная строка
 // console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
@@ -101,36 +111,29 @@
 // console.log(formatString('Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.'));
 // // вернется форматированная строка
 
-// function formatString(string) {
-// 	if (string.length <= 40) {
-// 		return string;
-// 	} else {
-// 		return string.slice(0, 40) + '...' ;
-// 	}
-// }
 
-
-
-
-//! Задание 5 -----------------------------------------------------------------
+//! Задание #5 -----------------------------------------------------------------
 
 // Напиши функцию checkForSpam(str), принимающую 1 параметр string - строку.
-// Функция проверяет ее на содержание слов spam и sale.Если нашли зарещенное 
+// Функция проверяет ее на содержание слов spam и sale.Если нашли запрещенное 
 // слово то функция возвращает true, если запрещенных слов нет функция 
 // возвращает false.Слова в строке могут быть в произвольном регистре.
 
-// Вызовы функции для проверки работоспособности твоей реализации.
-
-// console.log(checkForSpam('Latest technology news')); // false
-
-// console.log(checkForSpam('JavaScript weekly newsletter')); // false
-
-// console.log(checkForSpam('Get best sale offers now!')); // true
-
-// console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
-
 //! Решение #5
 
+function checkForSpam(str) {
+	return str.toLowerCase().includes('sPam'.toLowerCase()) || str.toLowerCase().includes('sALe'.toLowerCase())
+	// if (str.toLowerCase().includes('sPam'.toLowerCase()) || str.toLowerCase().includes('sALe'.toLowerCase())) {
+	// 	return true
+	// } else {
+	// 	return false
+	// }
+}
+
+console.log(checkForSpam('Latest technology news')); // false
+console.log(checkForSpam('JavaScript weekly newsletter')); // false
+console.log(checkForSpam('Get best sale offers now!')); // true
+console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
 
 
 
@@ -138,8 +141,7 @@
 
 
 
-
-//! Задание 6 --------------------------------------------------------------
+//! Задание #6 --------------------------------------------------------------
 
 // Напиши скрипт со следующим функционалом:
 
@@ -164,6 +166,13 @@
 // let total = 0;
 
 //! Решение #6
+
+
+
+
+
+
+
 
 
 
