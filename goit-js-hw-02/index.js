@@ -165,22 +165,24 @@
 // let total = 0;
 // const numbers = [];
 
-
-// do {
+// while (input !== null) {
 // 	input = prompt('Введите любое число');
+// 	const inputNumber = Number(input);
 
-// 	if (!isNaN(input)) {
+// 	if (!Number.isNaN(inputNumber)) {
 
-// 		if (+input !== 0) {
-// 			numbers.push(input)
+// 		if (input !== null && input !== '') {
+// 			numbers.push(inputNumber)
 // 			console.log(numbers)
-// 			total += +(input);
 // 		}
-
 // 	} else {
 // 		alert('Было введено не число, попробуйте еще раз')
 // 	}
-// } while (input !== null)
+// }
+
+// for (const el of numbers) {
+// 	total += +(el);
+// }
 
 // console.log(`Общая сумма чисел равна ${total}`);
 
