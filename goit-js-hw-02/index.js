@@ -121,23 +121,19 @@
 
 //! Решение #5
 
-function checkForSpam(str) {
-	return str.toLowerCase().includes('sPam'.toLowerCase()) || str.toLowerCase().includes('sALe'.toLowerCase())
-	// if (str.toLowerCase().includes('sPam'.toLowerCase()) || str.toLowerCase().includes('sALe'.toLowerCase())) {
-	// 	return true
-	// } else {
-	// 	return false
-	// }
-}
+// function checkForSpam(str) {
+// 	return str.toLowerCase().includes('sPam'.toLowerCase()) || str.toLowerCase().includes('sALe'.toLowerCase())
+// 	// if (str.toLowerCase().includes('sPam'.toLowerCase()) || str.toLowerCase().includes('sALe'.toLowerCase())) {
+// 	// 	return true
+// 	// } else {
+// 	// 	return false
+// 	// }
+// }
 
-console.log(checkForSpam('Latest technology news')); // false
-console.log(checkForSpam('JavaScript weekly newsletter')); // false
-console.log(checkForSpam('Get best sale offers now!')); // true
-console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
-
-
-
-
+// console.log(checkForSpam('Latest technology news')); // false
+// console.log(checkForSpam('JavaScript weekly newsletter')); // false
+// console.log(checkForSpam('Get best sale offers now!')); // true
+// console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
 
 
 
@@ -155,25 +151,38 @@ console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
 // for или
 // for... of .После чего в консоль
 // выведи строку 'Общая сумма чисел равна [сумма]'.
-// bell Делать проверку того, что пользователь ввел именно число, а не
+
+// Делать проверку того, что пользователь ввел именно число, а не
 // произвольный набор символов, не обязательно.Если хочешь, в случае
 // некорректного ввода, показывай alert с текстом 'Было введено не число, 
 // попробуйте еще раз ', при этом результат prompt записывать в массив чисел 
 // не нужно, после чего снова пользователю предлагается ввести число в prompt.
 
-// let input;
-// const numbers = [];
-// let total = 0;
 
 //! Решение #6
 
+// let input;
+// let total = 0;
+// const numbers = [];
 
 
+// do {
+// 	input = prompt('Введите любое число');
 
+// 	if (!isNaN(input)) {
 
+// 		if (+input !== 0) {
+// 			numbers.push(input)
+// 			console.log(numbers)
+// 			total += +(input);
+// 		}
 
+// 	} else {
+// 		alert('Было введено не число, попробуйте еще раз')
+// 	}
+// } while (input !== null)
 
-
+// console.log(`Общая сумма чисел равна ${total}`);
 
 
 
