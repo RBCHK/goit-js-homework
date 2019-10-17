@@ -140,25 +140,20 @@ class StringBuilder {
 		return this._value;
 	}
 
-	set value(value) {
-		this._value = value;
-	}
-
 	append(str) {
-		// return this._value.splice(0, 0, str);
-		return this._value.push(str);
+		return this._value = `${this.value}${str}`
 	}
 
 	prepend(str) {
-		return this._value.unshift(str);
+		return this._value = `${str}${this.value}`
 	}
 
 	pad(str) {
-		return this._value.push(str) && this._value.unshift(str);
+		return this._value = `${str}${this.value}${str}`
 	}
 }
 
-const builder = new StringBuilder(['.']);
+const builder = new StringBuilder('.');
 
 builder.append('^');
 console.log(builder.value); // '.^'
@@ -169,7 +164,7 @@ console.log(builder.value); // '^.^'
 builder.pad('=');
 console.log(builder.value); // '=^.^='
 
-
+// console.log(builder.value.join(''));
 //! Задание 5 --------------------------------
 // Напиши класс Car с указанными свойствами и методами.
 
