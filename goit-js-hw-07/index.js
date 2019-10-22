@@ -47,48 +47,193 @@
 
 //! Решение 2
 
-const ingredients = [
-	'Картошка',
-	'Грибы',
-	'Чеснок',
-	'Помидоры',
-	'Зелень',
-	'Приправы',
-];
+// const ingredients = [
+// 	'Картошка',
+// 	'Грибы',
+// 	'Чеснок',
+// 	'Помидоры',
+// 	'Зелень',
+// 	'Приправы',
+// ];
 
-// const ul = document.querySelector('#ingredients')
+// // для одного елемента из массива ------------------
+
+// // const ul = document.querySelector('#ingredients')
 // // console.log(ul);
-// let li = document.createElement('li');
-// ul.append(li);
-// li.innerHTML = ingredients[0]
+
+// // const li = document.createElement('li');
+// // ul.append(li);
+// // li.innerHTML = ingredients[0]
 // // console.log(li);
 
-ingredients.forEach(function(item) {
-	const li = document.createElement('li')
-	const text = document.createTextNode(item);
-	li.appendChild(text);
-	document.getElementById("ingredients").appendChild(li);
-  });
+// // для всех елементов массива вариант 1 ------------------
+
+// const ul = document.querySelector('#ingredients');
+// // console.log(ul);
+
+// ingredients.forEach(function (ingredient) {
+// 	const li = document.createElement('li');
+// 	li.innerHTML = ingredient;
+// 	ul.append(li);
+// 	// console.log(li);
+// })
+
+// // для всех елементов массива вариант 2 ------------------
+
+// // ingredients.forEach(function(item) {
+// // 	const li = document.createElement('li');
+// // 	const text = document.createTextNode(item);
+// // 	li.appendChild(text);
+// // 	document.getElementById("ingredients").appendChild(li);
+// //   })
 
 
 //! Задание 3 ------------------------------
-Напиши скрипт для создания галлереи изображений по массиву данных.
+// Напиши скрипт для создания галлереи изображений по массиву данных.
 
-В HTML есть список ul#gallery.
+// В HTML есть список ul#gallery.
 
-<ul id="gallery"></ul>
-Используй массив объектов images для создания тегов img вложенных в li. Для создания разметки используй шаблонные строки и insertAdjacentHTML().
+// Используй массив объектов images для создания тегов img 
+// вложенных в li. Для создания разметки используй шаблонные 
+// строки и insertAdjacentHTML().
 
-Все элементы галереи должны добавляться в DOM за одну операцию вставки.
-Добавь минимальное оформление галереи флексбоксами или гридами через css-классы.
+// Все элементы галереи должны добавляться в DOM за одну операцию 
+// вставки.
+// Добавь минимальное оформление галереи флексбоксами или гридами
+// через css-классы.
+
 //! Решение 3
+// const images = [{
+// 		url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+// 		alt: 'White and Black Long Fur Cat',
+// 	},
+// 	{
+// 		url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+// 		alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+// 	},
+// 	{
+// 		url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+// 		alt: 'Group of Horses Running',
+// 	},
+// ];
+
+// const ul = document.querySelector('#gallery')
+// console.log(ul);
+
+// images.forEach(function (image) {
+
+// 	const li = document.createElement('li');
+// 	ul.insertAdjacentElement("beforeend", li);
+
+// 	const img = document.createElement('img');
+// 	img.src = `${image.url}`;
+// 	img.alt = `${image.alt}`;
+// 	img.width = 100;
+
+// 	li.insertAdjacentElement("beforeend", img);
+
+// })
 
 
 //! Задание 4 -----------------------------
+// Счетчик состоит из спана и кнопок, которые должны увеличивать
+// и уменьшать значение счетчика на 1.
+
+// Создай переменную counterValue в которой будет хранится текущее
+// значение счетчика.
+// Создай функции increment и decrement для увеличения и уменьшения
+// значения счетчика
+// Добавь слушатели кликов на кнопки, вызовы функций и обновление
+// интерфейса
 
 //! Решение 4
 
+// // const counter = document.querySelector('#counter');
+// // console.log(counter)
+
+// const counterValue = document.querySelector('#value');
+// counterValue.textContent = 100;
+// // console.log(counterValue); 
+
+// const increment = document.querySelector('[data-action="increment"]');
+// const decrement = document.querySelector('[data-action="decrement"]');
+// // console.log(increment);
+// // console.log(decrement);
+
+// increment.addEventListener('click', () => counterValue.textContent = +counterValue.textContent + 1)
+// decrement.addEventListener('click', () => counterValue.textContent = +counterValue.textContent - 1)
+
 
 //! Задание 5 --------------------------------
+// Напиши скрипт который, при наборе текста в инпуте input#name-input 
+// (событие input), подставляет его текущее значение в span#name-output. 
+// Если инпут пустой, в спане должна отображаться строка 'незнакомец'.
 
 //! Решение 5
+
+// const nameInput = document.querySelector('#name-input')
+// // console.log(nameInput);
+
+// const nameOutput = document.querySelector('#name-output');
+// // nameOutput.textContent = '1233456789'
+// // console.log(nameOutput);
+
+// nameInput.addEventListener('input', () => {
+// 	nameOutput.textContent = nameInput.value;
+// 	if (nameInput.value === '') {
+// 		nameOutput.textContent = 'Незнакомец'
+// 	}
+// })
+
+//! Задание 6 --------------------------------
+
+// Напиши скрипт, который бы при потере фокуса на инпуте,
+// проверял его содержимое на правильное количество символов.
+
+// Сколько символов должно быть в инпуте, указывается в его
+// атрибуте data - length.
+// Если введено подходящее количество, то border инпута
+// становится зеленым, если неправильное - красным.
+// Для добавления стилей, используй CSS - классы valid и invalid.
+
+//! Решение 6
+
+// const validationInput = document.querySelector('#validation-input');
+
+// validationInput.addEventListener('blur', () => {
+// 	if (validationInput.value.length !== +validationInput.dataset.length) {
+// 		validationInput.classList.add('invalid');
+// 	} else {
+// 		validationInput.classList.add('valid');
+// 	}
+// });
+
+// validationInput.addEventListener('focus', () => {
+// 	if (validationInput.classList.contains('invalid')) {
+// 		validationInput.classList.remove("invalid")
+// 	} else {
+// 		validationInput.classList.remove('valid')
+// 	}
+// });
+ 
+
+//! Задание 7 ------------------------------- -
+// Напиши скрипт, который реагирует на изменение значения input#font-size-control 
+// (событие input) и изменяет инлайн-стиль span#text обновляя свойство font-size. 
+// В результате при перетаскивании ползунка будет меняться размер текста.
+
+//! Решение 7
+
+const fontSizeControl = document.querySelector('#font-size-control');
+const text = document.querySelector('#text');
+// fontSizeControl.value = 14;
+
+fontSizeControl.addEventListener('input', () => {
+	text.style.fontSize = `${fontSizeControl.value}px`;
+})
+
+
+//! Задание 8 --------------------------------
+
+//! Решение 8
+
