@@ -148,20 +148,16 @@
 
 //! Решение 4
 
-// // const counter = document.querySelector('#counter');
-// // console.log(counter)
-
 // const counterValue = document.querySelector('#value');
-// counterValue.textContent = 100;
-// // console.log(counterValue); 
+// let value = 0;
+
+// counterValue.textContent = value
 
 // const increment = document.querySelector('[data-action="increment"]');
 // const decrement = document.querySelector('[data-action="decrement"]');
-// // console.log(increment);
-// // console.log(decrement);
 
-// increment.addEventListener('click', () => counterValue.textContent = +counterValue.textContent + 1)
-// decrement.addEventListener('click', () => counterValue.textContent = +counterValue.textContent - 1)
+// increment.addEventListener('click', () => counterValue.textContent = value += 1)
+// decrement.addEventListener('click', () => counterValue.textContent = value -= 1)
 
 
 //! Задание 5 --------------------------------
@@ -215,7 +211,7 @@
 // 		validationInput.classList.remove('valid')
 // 	}
 // });
- 
+
 
 //! Задание 7 ------------------------------- -
 // Напиши скрипт, который реагирует на изменение значения input#font-size-control 
@@ -224,16 +220,90 @@
 
 //! Решение 7
 
-const fontSizeControl = document.querySelector('#font-size-control');
-const text = document.querySelector('#text');
-// fontSizeControl.value = 14;
+// const fontSizeControl = document.querySelector('#font-size-control');
+// const text = document.querySelector('#text');
+// // fontSizeControl.value = 14;
 
-fontSizeControl.addEventListener('input', () => {
-	text.style.fontSize = `${fontSizeControl.value}px`;
-})
+// fontSizeControl.addEventListener('input', () => {
+// 	text.style.fontSize = `${fontSizeControl.value}px`;
+// })
 
 
-//! Задание 8 --------------------------------
+//! Задание 8 дополнительное, выполнять не обязательно -----------------------
+// Напиши скрипт создания и очистки коллекции элементов. Пользователь вводит 
+// количество элементов в input и нажимает кнопку Создать, после чего рендерится 
+// коллекция. При нажатии на кнопку Очистить, коллекция элементов очищается.
+
+// Создай функцию createBoxes(amount), которая принимает 1 параметр amount - число. 
+// Функция создает столько div, сколько указано в amount и добавляет их в div#boxes.
+
+// Каждый созданный div:
+
+// Имеет случайный rgb цвет фона
+// Размеры самого первого div - 30px на 30px
+// Каждый следующий div после первого, должен быть шире и выше предыдущего на 10px
+// Создай функцию destroyBoxes(), которая очищает div#boxes.
+
+{
+	/* <div id="controls">
+				<input type="number" min="0" max="100" step="1" />
+				<button type="button" data-action="render">Создать</button>
+				<button type="button" data-action="destroy">Очистить</button>
+			</div>
+
+			<div id="boxes"></div> */
+}
 
 //! Решение 8
 
+// const controls = document.querySelector('#controls');
+// const boxes = document.querySelector('#boxes');
+// const input = document.querySelector('input');
+// const render = document.querySelector('[data-action="render"]');
+// const destroy = document.querySelector('[data-action="destroy"]');
+// let amount;
+
+// render.addEventListener('click', () => {
+// 	amount = input.value
+// 	console.log(boxes);
+
+// 	createBoxes(amount)
+// });
+
+// destroy.addEventListener('click', () => {
+
+// 	destroyBoxes()
+// });
+
+// function createBoxes(amount) {
+
+// 	for (let i = 0; i < amount; i += 1) {
+// 		const div = document.createElement('div');
+// 		const width = 30;
+// 		const height = 30;
+
+// 		div.style.width = `${width + i * 10}px`;
+// 		div.style.height = `${height + i * 10}px`;
+	
+// 		div.style.backgroundColor = `${random_bg_color()}`
+
+// 		div.style.transition = '2s ease-in-out';
+// 		setTimeout(() => `${random_bg_color()}`, 1000)
+
+// 		boxes.append(div);
+// 	}
+// }
+
+// function destroyBoxes() {
+// 	boxes.innerHTML = '';
+// 	input.value = '';
+// }
+
+// function random_bg_color() {
+// 	const x = Math.floor(Math.random() * 256);
+// 	const y = Math.floor(Math.random() * 256);
+// 	const z = Math.floor(Math.random() * 256);
+// 	const bgColor = `rgb(${x}, ${y}, ${z})`;
+
+// 	return bgColor
+// }

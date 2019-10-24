@@ -60,32 +60,34 @@
 
 	<div id="counter">
 		<button type="button" data-action="decrement">-1</button>
-		<span id="value">0</span>
+		<span id="value"></span>
 		<button type="button" data-action="increment">+1</button>
 	</div>
 
 	<h3>Задание 5 --------------------------------------</h3>
 
-	<input type="text" placeholder="Ваше имя?" id="name-input" />
-	<h1>Привет, <span id="name-output">незнакомец</span>!</h1>
+	<!-- <input type="text" placeholder="Ваше имя?" id="name-input" />
+	<h1>Привет, <span id="name-output">незнакомец</span>!</h1> -->
 
 	<h3>Задание 6 --------------------------------------</h3>
-	<input 
-	type="text" 
-	id="validation-input" 
-	data-length="6" 
-	placeholder="Введи 6 символов" />
+
+	<!-- <input type="text" id="validation-input" data-length="6" placeholder="Введи 6 символов" /> -->
 
 	<h3>Задание 7 --------------------------------------</h3>
-	
-	<input id="font-size-control" type="range" />
+
+	<!-- <input id="font-size-control" type="range" />
 	<br />
-	<span id="text">Абракадабра!</span>
+	<span id="text">"Абракадабра"!</span> -->
 
 	<h3>Задание 8 --------------------------------------</h3>
 
-
-
+	<div id="controls">
+		<input type="number" min="0" max="100" step="1" />
+		<button type="button" data-action="render">Создать</button>
+		<button type="button" data-action="destroy">Очистить</button>
+	</div>
+	<div id="boxes"></div>
+	
 	<script type="module" src="./index.js"></script>
 </body>
 
