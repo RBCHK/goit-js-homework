@@ -184,15 +184,13 @@ refs.stop.addEventListener('click', () => {
 class CountdownTimer {
 
 	constructor(options) {
-		this.selector = options.selector
+		this.target = document.querySelector(options.selector)
 		this.targetDate = options.targetDate
 	}
 
 	getTime() {
 
-		const markup = document.createElement('div');
-		const body = document.querySelector('body');
-		body.append(markup);
+		let markup = '';
 
 		this.timer = setInterval(() => {
 
@@ -202,28 +200,29 @@ class CountdownTimer {
 			const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
 			const secs = Math.floor((time % (1000 * 60)) / 1000);
 
-			markup.innerHTML = `
-			<div class="timer" id="timer-1">
-				<div class="field">
-			  		<span class="value" data-value="days">${days}</span>
-			  		<span class="label">Days</span>
-				</div>
+			markup = `
+			<div class="field">
+					<span class="value" data-value="days">${days}</span>
+					<span class="label">Days</span>
+			</div>
+		
+			<div class="field">
+					<span class="value" data-value="hours">${hours}</span>
+					<span class="label">Hours</span>
+			</div>
+		
+			<div class="field">
+					<span class="value" data-value="mins">${mins}</span>
+					<span class="label">Minutes</span>
+			</div>
+		
+			<div class="field">
+					<span class="value" data-value="secs">${secs}</span>
+					<span class="label">Seconds</span>
+			</div>
+			`;
+			this.target.innerHTML = markup;
 			
-				<div class="field">
-			  		<span class="value" data-value="hours">${hours}</span>
-			  		<span class="label">Hours</span>
-				</div>
-			
-				<div class="field">
-			  		<span class="value" data-value="mins">${mins}</span>
-			  		<span class="label">Minutes</span>
-				</div>
-			
-				<div class="field">
-			  		<span class="value" data-value="secs">${secs}</span>
-			  		<span class="label">Seconds</span>
-				</div>
-			</div>`;
 		}, 1000)
 	}
 }
@@ -234,6 +233,11 @@ const countdownTimer = new CountdownTimer({
 });
 
 countdownTimer.getTime()
+
+
+
+
+
 
 
 
