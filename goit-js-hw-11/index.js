@@ -1,42 +1,42 @@
 //! Переключатель цветов
 
-// const colors = [
-// 	'#f56642',
-// 	'#42a7f5',
-// 	'#42f58d',
-// 	'#8142f5',
-// 	'#f542dd',
-// 	'#f542dd',
-// ];
+const colors = [
+	'#f56642',
+	'#42a7f5',
+	'#42f58d',
+	'#8142f5',
+	'#f542dd',
+	'#f542dd',
+];
 
-// const refs = {
-// 	body: document.querySelector('body'),
-// 	start: document.querySelector('[data-action="start"]'),
-// 	stop: document.querySelector('[data-action="stop"]'),
-// }
+const refs = {
+	body: document.querySelector('body'),
+	start: document.querySelector('[data-action="start"]'),
+	stop: document.querySelector('[data-action="stop"]'),
+}
 
-// const randomIntegerFromInterval = (min = 0, max = colors.length - 1) => {
-// 	return Math.floor(Math.random() * colors.length);
-// 	// * (max - min + 1) + min
-// };
+const randomIntegerFromInterval = (min = 0, max = colors.length - 1) => {
+	return Math.floor(Math.random() * colors.length);
+	// * (max - min + 1) + min
+};
 
-// let startId;
+let startId;
 
-// refs.start.addEventListener('click', (e) => {
-// 	refs.start.disabled = true;
-// 	refs.stop.disabled = false;
+refs.start.addEventListener('click', (e) => {
+	refs.start.disabled = true;
+	refs.stop.disabled = false;
 
-// 	startId = setInterval(() => {
-// 		refs.body.bgColor = colors[randomIntegerFromInterval()];
-// 		refs.body.style.transition = '.7s ease-in-out';
-// 	}, 400);
-// })
+	startId = setInterval(() => {
+		refs.body.bgColor = colors[randomIntegerFromInterval()];
+		refs.body.style.transition = '.7s ease-in-out';
+	}, 400);
+})
 
-// refs.stop.addEventListener('click', () => {
-// 	refs.start.disabled = false;
-// 	refs.stop.disabled = true;
-// 	clearInterval(startId)
-// })
+refs.stop.addEventListener('click', () => {
+	refs.start.disabled = false;
+	refs.stop.disabled = true;
+	clearInterval(startId)
+})
 
 //! Задание 1
 
@@ -123,60 +123,117 @@
 
 //! Решение Задачи 3
 
-const randomIntegerFromInterval = (min, max) => {
-	return Math.floor(Math.random() * (max - min + 1) + min);
-};
+// const randomIntegerFromInterval = (min, max) => {
+// 	return Math.floor(Math.random() * (max - min + 1) + min);
+// };
 
-const makeTransaction = (transaction) => {
-	const delay = randomIntegerFromInterval(200, 500);
+// const makeTransaction = (transaction) => {
+// 	const delay = randomIntegerFromInterval(200, 500);
 
-	return new Promise(function (resolve, reject) {
+// 	return new Promise(function (resolve, reject) {
 
-		setTimeout(() => {
-			const canProcess = Math.random() > 0.3;
-			if (canProcess) {
-				resolve({id: transaction.id, time: delay});
-			  } else {
-				reject(transaction.id);
-			  }
-		})
+// 		setTimeout(() => {
+// 			const canProcess = Math.random() > 0.3;
+// 			if (canProcess) {
+// 				resolve({id: transaction.id, time: delay});
+// 			  } else {
+// 				reject(transaction.id);
+// 			  }
+// 		})
 
-	}, delay)
-}
+// 	}, delay)
+// }
 
-const logSuccess = ({id, time}) => {
-	console.log(`Transaction ${id} processed in ${time}ms`);
-};
+// const logSuccess = ({id, time}) => {
+// 	console.log(`Transaction ${id} processed in ${time}ms`);
+// };
 
-const logError = id => {
-	console.warn(`Error processing transaction ${id}. Please try again later.`);
-};
+// const logError = id => {
+// 	console.warn(`Error processing transaction ${id}. Please try again later.`);
+// };
 
-makeTransaction({ id: 70, amount: 150 })
-  .then(logSuccess)
-  .catch(logError);
+// makeTransaction({ id: 70, amount: 150 })
+//   .then(logSuccess)
+//   .catch(logError);
 
-makeTransaction({ id: 71, amount: 230 })
-  .then(logSuccess)
-  .catch(logError);
+// makeTransaction({ id: 71, amount: 230 })
+//   .then(logSuccess)
+//   .catch(logError);
 
-makeTransaction({ id: 72, amount: 75 })
-  .then(logSuccess)
-  .catch(logError);
+// makeTransaction({ id: 72, amount: 75 })
+//   .then(logSuccess)
+//   .catch(logError);
 
-makeTransaction({ id: 73, amount: 100 })
-  .then(logSuccess)
-  .catch(logError);
-
-
-
-
+// makeTransaction({ id: 73, amount: 100 })
+//   .then(logSuccess)
+//   .catch(logError);
 
 
 //! Таймер обратного отсчета 
 
+// Создай плагин настраиваемого таймера, который ведет обратный отсчет до 
+// предварительно определенной даты. Такой плагин может использоваться в блогах 
+// и интернет-магазинах, страницах регистрации событий, во время технического 
+// обслуживания и т. д.
+
+// Плагин ожидает следующую HTML-разметку и показывает четыре цифры: дни, часы, 
+// минуты и секунды в формате XX:XX:XX:XX. Количество дней может состоять из 
+// более чем двух цифр.
 
 
+class CountdownTimer {
+
+	constructor(options) {
+		this.selector = options.selector
+		this.targetDate = options.targetDate
+	}
+
+	getTime() {
+
+		const markup = document.createElement('div');
+		const body = document.querySelector('body');
+		body.append(markup);
+
+		this.timer = setInterval(() => {
+
+			const time = this.targetDate - Date.now();
+			const days = Math.floor(time / (1000 * 60 * 60 * 24));
+			const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+			const secs = Math.floor((time % (1000 * 60)) / 1000);
+
+			markup.innerHTML = `
+			<div class="timer" id="timer-1">
+				<div class="field">
+			  		<span class="value" data-value="days">${days}</span>
+			  		<span class="label">Days</span>
+				</div>
+			
+				<div class="field">
+			  		<span class="value" data-value="hours">${hours}</span>
+			  		<span class="label">Hours</span>
+				</div>
+			
+				<div class="field">
+			  		<span class="value" data-value="mins">${mins}</span>
+			  		<span class="label">Minutes</span>
+				</div>
+			
+				<div class="field">
+			  		<span class="value" data-value="secs">${secs}</span>
+			  		<span class="label">Seconds</span>
+				</div>
+			</div>`;
+		}, 1000)
+	}
+}
+
+const countdownTimer = new CountdownTimer({
+	selector: '#timer-1',
+	targetDate: new Date('Jan 01, 2020'),
+});
+
+countdownTimer.getTime()
 
 
 
